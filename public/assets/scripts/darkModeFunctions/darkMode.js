@@ -5,51 +5,53 @@ const injectDarkModeCSS = () => {
     styleElement = document.createElement("style");
     styleElement.innerHTML = `
             body {
-                background-color: #131313 !important;
-                filter: invert(1) hue-rotate(160deg) !important;
+                background-color: #262626 !important;
+                color: #e0e0e0 !important;
             }
+
 
             /* for undo filter */
             img, picture, video, iframe, canvas, .legendColorBox, #legend_unordered_list li svg, .welldone {
-                filter: invert(1) hue-rotate(-160deg) !important;
+                // filter: invert(1) hue-rotate(-180deg) saturate(1) !important;
             }
 
-            .red-link {
-                filter: invert(0.95) hue-rotate(-160deg) !important;
+            a,b,h1,h2,h3,h4,h5,h6{
+                color: #f5f5f5 !important;
+            }
+            
+            li,span{
+                color: #ffffff !important;
             }
 
-            .tex-font-style-tt {
-                font-weight: 600 !important;
+            .mobile-toolbar {
+                background-color: #333333 !important;
             }
 
-            .user-gray, .user-green, .user-cyan, .user-violet, .user-orange, .user-red, .user-legendary {
-                filter: invert(0.95) hue-rotate(-160deg) !important;
+            .roundbox {
+                background-color: #333333 !important;
             }
 
-            .user-blue {
-                filter: invert(0.2) !important;
-                color: #0000ff !important;
+            p,li,span{
+                color: #ffffff !important;
             }
 
-            .user-legendary span, .user-4000 span {
-                filter: invert(0.95) hue-rotate(-160deg) !important;
+            .spoiler-content {
+                background-color: #333333 !important;
             }
 
-            table {
-                filter: brightness(0.99) !important;
+            .topic .title * {
+                color: #4a7bd0 !important;
             }
 
-            img[title="Codeforces"], img[alt="ITMO University"] {
-                filter: none !important;
-            }
 
             .login-button-custom {
                 background-color: #423dc8 !important;
             }
+            
 
             input, textarea, select {
                 background-color: #dadadd !important;
-                color: #000000 !important;
+                color: #1a1a1a !important;
                 border: none !important;
                 border-radius: 4px !important;
                 padding-top: 4px !important;
@@ -62,12 +64,21 @@ const injectDarkModeCSS = () => {
                 border-color: #555 !important;
             }
 
-            a {
-                color: #122a70 !important;
+            .rated-user{
+                filter: brightness(1.5) contrast(1.2) !important;
             }
 
+            .user-blue {
+                color: #1976d2 !important; 
+            }
+            
+            .user-black {
+                color: rgba(0, 0, 0, 0.8) !important; 
+            }
+
+
             .menu-list-container a, .second-level-menu-list a {
-                color: #000000 !important;
+                color: #1a1a1a !important;
             }
 
             ::-webkit-scrollbar {
@@ -97,7 +108,7 @@ const injectDarkModeCSS = () => {
                 observer.disconnect();
             }
         });
-        observer.observe(document, {childList: true, subtree: true});
+        observer.observe(document, { childList: true, subtree: true });
     }
 }
 
